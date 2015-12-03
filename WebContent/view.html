@@ -1,0 +1,37 @@
+<div id="visualizar" class="container-fluid">
+	<h3 class="page=header">Visualizar Item</h3>
+	<div class="row">
+		<div class="col-md-3">
+			<p><strong>ID: </strong>{{pessoa.id}}</p>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col-md-3">
+			<p><strong>Nome: </strong>{{pessoa.name}}</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<p><strong>Idade: </strong> {{pessoa.age}}</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<p><strong>Data: </strong>{{pessoa.birthday | date: 'dd/MM/yyyy'}}</p>
+		</div>
+	</div>
+	
+	<hr />
+	
+	<div id="actions" class="row">
+		<div class="col-md-12">
+			<a href="edit.html" class="btn btn-primary">Editar</a>
+			<a href="#/listar" class="btn btn-default">Fechar</a>
+			<a href="#" class="btn btn-default" ng-click="remover(pessoa)">Excluir</a>
+			<!-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#delete-modal">Excluir</a> -->
+		</div>
+	</div>
+<div>

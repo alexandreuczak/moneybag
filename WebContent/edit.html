@@ -1,0 +1,40 @@
+	<div id="main" class="container-fluid">
+		<h3 class="page=header">Editar Item</h3>
+		<form>
+		
+			<div class="row">
+				<div class="form-group col-md-3">
+					<label for="campo1">ID</label>
+					<input ng-disabled="true" type="text" class="form-control" id="campo1" ng-model="pessoa.id">
+				</div>
+			
+			
+			
+				<div class="form-group col-md-3">
+					<label for="campo2">Nome</label>
+					<input type="text" class="form-control" id="campo2" ng-model="pessoa.name">
+				</div>
+			
+			
+			
+				<div class="form-group col-md-3">
+					<label for="campo3">Idade</label>
+					<input type="text" class="form-control" id="campo3" ng-model="pessoa.age">			
+				</div>
+				
+				<div class="form-group col-md-3">
+					<label for="campo4">Data</label>
+					<input type="text" class="form-control" id="campo4" ng-model="pessoa.birthday">
+				</div>
+				
+			</div>
+			
+			<hr />
+			<div id="actions" class="row">
+				<div class="col-md-12">
+					<button type="button" ng-click="atualizar(pessoa)" class="btn btn-primary">Atualizar</button>					
+					<a href="#/listar" class="btn btn-default">Cancelar</a>
+				</div>
+			</div>
+		</form>
+	<div>

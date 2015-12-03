@@ -1,0 +1,62 @@
+<div id="listagem" class="container-fluid" ng-controller="listarPessoasCtrl">
+
+	<div id="top" class="row">
+
+		<div class="col-md-3">
+			<h2>Itens</h2>
+		</div>
+
+		<div class="col-md-6">
+			<div class="input-group h2">
+				<input ng-model="search.text" name="data[search]"
+					class="form-control" id="search" type="text"
+					placeholder="Pesquisar Itens"> <span
+					class="input-group-btn">
+					<button class="btn btn-primary" type="button" ng-click="">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<a href="#/adicionar" class="btn btn-primary pull-right h2">Novo
+				Item</a>
+		</div>
+
+	</div>
+
+	<hr />
+
+	<div id="list" class="row">
+		<div class="table-responsive col-md-12">
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Idade</th>
+						<th>Data Nascimento</th>
+						<th class="actions"></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="pessoa in pessoas | filter: {name: search.text}">
+						<td>{{pessoa.id}}</td>
+						<td>{{pessoa.name}}</td>
+						<td>{{pessoa.age}}</td>
+						<td>{{pessoa.birthday | date:'dd/MM/yyyy'}}</td>
+						<td class="actions">
+							<div class="pull-right">
+								<a class="btn btn-success btn-xs" href="#/visualizar/{{pessoa.id}}">Visualizar</a>
+								<a class="btn btn-warning btn-xs" href="#/editar/{{pessoa.id}}">Editar<a />
+									<button class="btn btn-danger btn-xs" ng-click="remover(pessoa)">Excluir</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
